@@ -25,6 +25,7 @@ return {
 			"hrsh7th/cmp-path",         -- Path completions
 			"saadparwaiz1/cmp_luasnip", -- Snippets support
 			"L3MON4D3/LuaSnip",         -- Snippet engine
+			'hrsh7th/cmp-cmdline',
 		},
 	},
 }

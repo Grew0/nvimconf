@@ -1,0 +1,15 @@
+return {
+	"f-person/git-blame.nvim",
+	event = "VeryLazy",
+	opts = {
+		message_template = " <summary> • <date> • <author> • <<sha>>",
+		date_format = "%d-%m-%Y %H:%M:%S",
+		virtual_text_column = 1,
+	},
+	config = function()
+		vim.g.gitblame_enabled = false
+		vim.keymap.set('n', '<leader>b', function()
+			vim.g.gitblame_enabled = not vim.g.gitblame_enabled
+		end, { desc = 'turning off/on' })
+	end
+}
