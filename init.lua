@@ -5,6 +5,7 @@ require("config.tree")
 require("config.telescope")
 require("config.keys")
 require("config.cmp")
+require("config.lualine")
 
 -- making tabs normal
 vim.opt.tabstop = 4
