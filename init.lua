@@ -22,3 +22,9 @@ vim.opt.relativenumber = true
 if global_config_use_mouse then
 	vim.cmd("set mouse=")
 end
+
+-- set typescript for ets
+vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
+	pattern = "*.ets",
+	command = "setfiletype typescript"
+})

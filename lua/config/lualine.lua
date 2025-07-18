@@ -10,7 +10,7 @@ require('lualine').setup {
     },
     ignore_focus = {},
     always_divide_middle = true,
-    always_show_tabline = true,
+    always_show_tabline = false,
     globalstatus = false,
     refresh = {
       statusline = 1000,
@@ -47,7 +47,11 @@ require('lualine').setup {
     lualine_y = {},
     lualine_z = {}
   },
-  tabline = {},
+  tabline = {
+    lualine_a={
+		'tabs',
+	},
+  },
   winbar = {},
   inactive_winbar = {},
   extensions = {}
