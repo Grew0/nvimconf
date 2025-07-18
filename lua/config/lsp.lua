@@ -9,7 +9,7 @@ local on_attach = {
 			local opts = { buffer = bufnr }
 			vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts) -- Go to definition
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)       -- Show docs
-			vim.keymap.set("n", "<leader>w", function()
+			local switch_errors = function()
 				data.errs = not data.errs
 				vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 				vim.lsp.diagnostic.on_publish_diagnostics, {
@@ -20,8 +20,13 @@ local on_attach = {
 				})
 				if data.errs then print("W&E on")
 				else print("W&E off") end
-				vim.cmd(":LspRestart")
-			end)
+			end
+			data.errs = not data.errs;
+			switch_errors();
+			vim.keymap.set("n", "<leader>w", function() 
+				switch_errors();
+				vim.cmd(":LspRestart");
+			end);
 		end
 	end
 }
