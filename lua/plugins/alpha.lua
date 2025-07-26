@@ -7,16 +7,10 @@ return {
     config = function ()
 		local dashboard = require("alpha.themes.dashboard")
 		-- Set header
-		dashboard.section.header.val = {
-			"                                                     ",
-			"  ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ ",
-			"  ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║ ",
-			"  ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║ ",
-			"  ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║ ",
-			"  ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║ ",
-			"  ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ",
-			"                                                     ",
-		}
+
+		local variants = require("config.alphatitles");
+		math.randomseed(os.clock())
+		dashboard.section.header.val = variants[math.random(#variants)];
 
 		-- Set menu
 		dashboard.section.buttons.val = {
