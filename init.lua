@@ -1,4 +1,5 @@
 global_config_use_mouse = true
+
 require("config.lazy")
 require("config.onedark")
 require("config.tree")
@@ -6,6 +7,7 @@ require("config.telescope")
 require("config.keys")
 require("config.cmp")
 require("config.lualine")
+require("config.functions")
 
 -- making tabs normal
 vim.opt.tabstop = 4
@@ -28,3 +30,4 @@ vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
 	pattern = "*.ets",
 	command = "setfiletype typescript"
 })
+
