@@ -5,7 +5,7 @@ function AddCppIncludeGuard()
 		return
 	end
 	local guard_name = filename
-		:gsub('[^a-z0-9]', '_')
+		-- :gsub('[^a-z0-9]', '_')
 		:gsub('([a-z])([A-Z])', '%1_%2')
 		:gsub('[^%w]', '_')
 		:upper()
