@@ -8,6 +8,7 @@ require("config.keys")
 require("config.cmp")
 require("config.lualine")
 require("config.functions")
+require("config.clang-format")
 
 -- making tabs normal
 vim.opt.tabstop = 4
