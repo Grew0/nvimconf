@@ -26,6 +26,8 @@ return {
 			"saadparwaiz1/cmp_luasnip", -- Snippets support
 			"L3MON4D3/LuaSnip",         -- Snippet engine
 			'hrsh7th/cmp-cmdline',
+			'hrsh7th/cmp-vsnip',
+			'hrsh7th/vim-vsnip'
 		},
 	},
 }
