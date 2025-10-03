@@ -10,3 +10,7 @@ vim.keymap.set('t', '<c-n>', "<c-\\><c-n>", { desc = 'Faster way to exit termina
 -- Open greped
 vim.keymap.set('n', '<leader><c-o>', "0\"oyt:f:l\"lye:tabe <C-r>o<enter>:<C-r>l<enter>", { desc = 'Fast open terminal tab' });
 
+-- Diagnostic
+vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, { desc = 'Show diagnostic' })
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Previous diagnostic' })
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Next diagnostic' })
