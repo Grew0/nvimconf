@@ -3,11 +3,12 @@
 require("uniq")
 
 local pc = vim.g._PC;
+pc.config = {}
+
+if pc.special_setup ~= nil then pc.special_setup(pc) end
 
 if pc.name == "home" then
-	if pc.special_setup ~= nil then
-		pc.special_setup()
-	end
+	pc.config.no_clang_format = true
 end
 
 vim.g._PC = pc;
