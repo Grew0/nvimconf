@@ -1,5 +1,8 @@
 global_config_use_mouse = true
 
+-- keep up: set up variables for different PCs
+require("setup")
+
 require("config.lazy")
 require("config.onedark")
 require("config.tree")
