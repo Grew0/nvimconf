@@ -5,8 +5,10 @@ local on_attach = function(client, bufnr)
 	vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)       -- Show docs
 end
 local configs = {'clangd', 'pyright', 'bashls', 'ts_ls'}
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 for _, i in ipairs(configs) do
 	vim.lsp.enable(i)
 	vim.lsp.config(i, {on_attach=on_attach})
+	vim.lsp.config(i, {on_attach=on_attach, capabilities=capabilities})
 end
 
