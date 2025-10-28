@@ -13,6 +13,7 @@ for _, i in ipairs(configs) do
 	}
 
 	if i == 'lus_ls' then
+		config['filetypes'] = { 'lua' }
 		config["cmd"] = {"lua-language-server"}
 		config["settings"] = {
 			Lua = {
