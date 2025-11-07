@@ -23,5 +23,31 @@ return {
 				telemetry = { enable = false, },
 			},
 		}
+	},
+	omnisharp={
+		cmd = {
+			"omnisharp", "--languageserver", "--hostPID", tostring(vim.fn.getpid()),
+			"--dotnet-cli-telemetry-output", "off", "--project-load-timeout", "120"
+		},
+		settings = {
+			-- FormattingOptions = {
+			-- 	EnableEditorConfigSupport = false,
+			-- 	OrganizeImports = true,
+			-- },
+			Sdk = {
+				IncludePrereleases = true,
+			},
+			MSBuild= {
+				UseLegacySdkResolver= true,
+				LoadProjectsOnDemand= true
+			},
+			RoslynExtensionsOptions= {
+				enableAnalyzersSupport= true,
+				enableImportCompletion= true
+			},
+			FormattingOptions={
+				enableEditorConfigSupport= true
+			}
+		},
 	}
 }
