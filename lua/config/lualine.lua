@@ -48,9 +48,11 @@ require('lualine').setup {
     lualine_z = {}
   },
   tabline = {
-    lualine_a={
+    lualine_a={ {
 		'tabs',
-	},
+		mode=1,
+		max_length=vim.o.columns
+	} },
   },
   winbar = {},
   inactive_winbar = {},

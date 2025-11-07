@@ -25,7 +25,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 
 -- turn off the mouse
-if global_config_use_mouse then
+if not global_config_use_mouse then
 	vim.cmd("set mouse=")
 end
 
