@@ -21,7 +21,6 @@ return {
 				['`'] = { action = 'closeopen', pair = '``', neigh_pattern = '.[^%a\\]', register = { cr = false } },
 			},
 		})
-
 		require("mini.move").setup({})
 	end
 };
