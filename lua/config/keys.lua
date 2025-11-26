@@ -14,3 +14,7 @@ vim.keymap.set('n', '<leader><c-o>', "0\"oyt:f:l\"lye:tabe <C-r>o<enter>:<C-r>l<
 vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, { desc = 'Show diagnostic' })
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Previous diagnostic' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Next diagnostic' })
+
+-- Rename
+vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = 'Lsp rename' })
+
