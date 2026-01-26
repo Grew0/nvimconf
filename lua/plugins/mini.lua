@@ -22,5 +22,6 @@ return {
 			},
 		})
 		require("mini.move").setup({})
+		require("mini.diff").setup({})
 	end
 };
