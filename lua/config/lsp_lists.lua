@@ -49,5 +49,17 @@ return {
 				enableEditorConfigSupport= true
 			}
 		},
-	}
+	},
+	cmake_language_server={
+		cmd = {"cmake-language-server"},
+		filetypes = {"cmake"},
+		rootPatterns = {
+			"build/"
+		},
+		initializationOptions = {
+			buildDirectory = "build"
+		}
+	},
 }
+
+
