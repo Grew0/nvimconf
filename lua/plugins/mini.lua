@@ -23,5 +23,6 @@ return {
 		})
 		require("mini.move").setup({})
 		require("mini.diff").setup({})
+		require("mini.jump2d").setup({})
 	end
 };
