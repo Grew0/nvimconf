@@ -12,9 +12,27 @@ vim.keymap.set('n', '<leader><c-o>', "0\"oyt:f:l\"lye:tabe <C-r>o<enter>:<C-r>l<
 
 -- Diagnostic
 vim.keymap.set('n', '<leader>d', vim.diagnostic.open_float, { desc = 'Show diagnostic' })
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Previous diagnostic' })
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Next diagnostic' })
+vim.keymap.set('n', '[d', function() vim.diagnostic.jump({count = -1}) end, { desc = 'Previous diagnostic' })
+vim.keymap.set('n', ']d', function() vim.diagnostic.jump({count = 1}) end, { desc = 'Next diagnostic' })
 
 -- Rename
 vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = 'Lsp rename' })
 
+-- Update tab
+vim.keymap.set('n', '<leader><c-l>', function() vim.cmd("tabnew % | exe \"normal \\<c-o>\" | tabp | tabclose") end, { desc = 'Lsp rename' })
+
+-- Push without overriting
+vim.keymap.set('v', 'p', '"_dP', { desc = 'Paste without overwriting register' })
+
+-- Delete swap file
+vim.keymap.set('n', 'grds', function()
+  local swapfile = vim.fn.swapname(vim.api.nvim_get_current_buf())
+  if swapfile ~= "" and vim.fn.filereadable(swapfile) == 1 then
+    vim.fn.delete(swapfile)
+    print("Deleted swap file: " .. swapfile)
+  else
+    print("No swap file found for current buffer")
+  end
+end, { desc = 'Delete swap file for current buffer' })
+
+vim.keymap.set("n", "<leader>c" , vim.lsp.buf.code_action);
